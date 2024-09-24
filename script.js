@@ -1,7 +1,8 @@
 const title = document.getElementById("titulo");
-const mensagem = document.querySelectorAll(".mensagem2");
 const helloBtn = document.getElementById("botao-ola");
 const changeTitleBtn = document.getElementById("btn-mudar-titulo");
+
+const mensagem = document.getElementsByClassName("mensagem2");
 const changeTitle3 = document.getElementById("btn-mudar-3");
 
 // Evento de clique para exibir uma mensagem "Olá"
@@ -14,9 +15,9 @@ changeTitleBtn.addEventListener("click", function () {
   title.textContent = "O Titulo foi mudado utilizando JS!";
 });
 
-changeTitle3.addEventListener("click", function () {
-    mensagem.forEach((mensagem, index) => {
-        mensagem.textContent = `A frase ${index+1} foi modificada`;
-        mensagem.style.color = "blue";
-    })
+changeTitle3.addEventListener("click", function() {
+    for(let i = 0; i < mensagem.length; i++) {
+        mensagem[i].textContent = `A frase ${i+1} foi modificada.`;
+        mensagem[i].style.color = "blue";
+    }
 });
